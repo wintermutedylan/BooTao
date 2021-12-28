@@ -53,7 +53,7 @@ module.exports = {
 
             )
             
-            client.channels.cache.get("925457848375336960").send({ embeds: [newEmbed] });
+            client.channels.cache.get("838666031332851713").send({ embeds: [newEmbed] });
 
 
             

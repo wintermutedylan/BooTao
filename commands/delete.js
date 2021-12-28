@@ -13,7 +13,7 @@ module.exports = {
         var target = message.guild.members.cache.get(ID);
         var modRole = "830700055539089456";
         var staffRole = "915603340744871986";
-        var milimRole = "879846023449690122"; //take this out later only for testing stuff
+        
 
         if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole || role.id === milimRole)){
             const name = args[0].toLowerCase();
@@ -44,7 +44,7 @@ module.exports = {
 
             )
             
-            client.channels.cache.get("925457848375336960").send({ embeds: [newEmbed] });
+            client.channels.cache.get("838666031332851713").send({ embeds: [newEmbed] });
 
 
             
