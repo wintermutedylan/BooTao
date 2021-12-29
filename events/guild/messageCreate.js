@@ -6,6 +6,7 @@ module.exports = async (Discord, client, message) => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
+    if (cmd[0] === '!') return;
     const customCommand = await custom.findOne({ guildID: message.guild.id, commandName: cmd });
     if (customCommand) {
         let text = customCommand.responseContent;
