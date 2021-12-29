@@ -15,7 +15,7 @@ module.exports = {
         var staffRole = "915603340744871986";
         
 
-        if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole || role.id === milimRole)){
+        if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole)){
             const name = args[0].toLowerCase();
             
             if (!name) return message.channel.send('Please specify a name');

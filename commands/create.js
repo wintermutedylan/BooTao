@@ -13,9 +13,9 @@ module.exports = {
         var target = message.guild.members.cache.get(ID);
         var modRole = "830700055539089456";
         var staffRole = "915603340744871986";
-        var milimRole = "879846023449690122"; //take this out later only for testing stuff
+        
 
-        if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole || role.id === milimRole)){
+        if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole)){
             const name = args[0].toLowerCase();
             const response = args.slice(1).join(" ");
             if (!name) return message.channel.send('Please specify a name for the Command');
