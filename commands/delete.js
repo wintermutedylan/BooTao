@@ -31,20 +31,26 @@ module.exports = {
             const d = new Date(message.createdTimestamp);
             d.setMilliseconds(0);
             d.setSeconds(0);
+            try{
 
-            const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f0263e')
-            .setTitle("Quote Removed")
-            .setDescription(`**${name}** has been removed`)
-            .addFields(
-                {name: 'Responsible Staff', value: `${userMention(message.author.id)}`, inline: true},
-                {name: 'Quote Name', value: `${name}`, inline: true},
-                {name: 'Quote Content', value: `${resp}`},
-                {name: 'Removed At', value: `${d.toUTCString()}`}
+                const newEmbed = new Discord.MessageEmbed()
+                .setColor('#f0263e')
+                .setTitle("Quote Removed")
+                .setDescription(`**${name}** has been removed`)
+                .addFields(
+                    {name: 'Responsible Staff', value: `${userMention(message.author.id)}`, inline: true},
+                    {name: 'Quote Name', value: `${name}`, inline: true},
+                    {name: 'Quote Content', value: `${resp}`},
+                    {name: 'Removed At', value: `${d.toUTCString()}`}
 
-            )
+                )
             
-            client.channels.cache.get("838666031332851713").send({ embeds: [newEmbed] });
+                client.channels.cache.get("838666031332851713").send({ embeds: [newEmbed] });
+            } catch(err){
+                
+                
+                client.channels.cache.get("838666046327619604").send(codeBlock('js', err));
+            }
 
 
             

@@ -40,20 +40,25 @@ module.exports = {
             const d = new Date(message.createdTimestamp);
             d.setMilliseconds(0);
             d.setSeconds(0);
+            try {
+                const newEmbed = new Discord.MessageEmbed()
+                .setColor('#90fcc0')
+                .setTitle("Quote Added")
+                .setDescription(`**${name}** has been added`)
+                .addFields(
+                    {name: 'Responsible Staff', value: `${userMention(message.author.id)}`, inline: true},
+                    {name: 'Quote Name', value: `${name}`, inline: true},
+                    {name: 'Quote Content', value: `${response}`},
+                    {name: 'Added At', value: `${d.toUTCString()}`}
 
-            const newEmbed = new Discord.MessageEmbed()
-            .setColor('#90fcc0')
-            .setTitle("Quote Added")
-            .setDescription(`**${name}** has been added`)
-            .addFields(
-                {name: 'Responsible Staff', value: `${userMention(message.author.id)}`, inline: true},
-                {name: 'Quote Name', value: `${name}`, inline: true},
-                {name: 'Quote Content', value: `${response}`},
-                {name: 'Added At', value: `${d.toUTCString()}`}
-
-            )
-            
-            client.channels.cache.get("838666031332851713").send({ embeds: [newEmbed] });
+                )
+                
+                client.channels.cache.get("838666031332851713").send({ embeds: [newEmbed] });
+            }catch(err){
+                message.reply("There was an error using this command, make sure to mention a channel");
+                
+                client.channels.cache.get("838666046327619604").send(codeBlock('js', err));
+            }
 
 
             
