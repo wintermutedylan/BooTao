@@ -2,10 +2,10 @@ const { userMention } = require("@discordjs/builders");
 const custom = require("../models/customCommands");
 
 module.exports = {
-    name: 'create',
+    name: 'editcommand',
     aliases: [],
     permissions: [],
-    description: "Create user profile",
+    description: "edit custom command",
     async execute(client, message, cmd, args, Discord){
 
         var ID = message.author.id;
@@ -22,34 +22,37 @@ module.exports = {
             if (!response) return message.channel.send('Please specify a response for the Command');
 
             customCommand = await custom.findOne({ guildID: message.guild.id, commandName: name});
-            if (customCommand) return message.channel.send('This custom commands alreayd exists!');
+            if (!customCommand) return message.channel.send('This custom commands does not exist!');
+            var oldResponse = customCommand.responseContent;
 
-            try{
-                let command = await custom.create({
-                    guildID: message.guild.id,
-                    commandName: name,
-                    responseContent: response
-                });
-                command.save();
+            try {
+                await custom.findOneAndUpdate({ guildID: message.guild.id, commandName: name},
+                    {
+                        $set: {
+                            responseContent: response
+                        },
+                    }
+                );
 
             } catch(err){
                 client.channels.cache.get("838666046327619604").send(codeBlock('js', err));
             }
 
-            message.channel.send(`Saved **${name}**`);
+            message.channel.send(`Edited **${name}**`);
             const d = new Date(message.createdTimestamp);
             d.setMilliseconds(0);
             d.setSeconds(0);
             try {
                 const newEmbed = new Discord.MessageEmbed()
-                .setColor('#90fcc0')
-                .setTitle("Quote Added")
-                .setDescription(`**${name}** has been added`)
+                .setColor('#FFBD33')
+                .setTitle("Quote Edited")
+                .setDescription(`**${name}** has been edited`)
                 .addFields(
                     {name: 'Responsible Staff', value: `${userMention(message.author.id)}`, inline: true},
                     {name: 'Quote Name', value: `${name}`, inline: true},
-                    {name: 'Quote Content', value: `${response}`},
-                    {name: 'Added At', value: `${d.toUTCString()}`}
+                    {name: 'Quote Was', value: `${oldResponse}`},
+                    {name: 'Quote Is', value: `${response}`},
+                    {name: 'Edited At', value: `${d.toUTCString()}`}
 
                 )
                 
@@ -76,4 +79,3 @@ module.exports = {
         
     }
 }
-
