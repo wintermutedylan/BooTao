@@ -51,7 +51,7 @@ module.exports = {
         var picture = milimArray[Math.floor(Math.random()*milimArray.length)];
         message.channel.send(picture);
     } else {
-        message.channel.send("You are missing the special role for this command! <a:ratejam:925478347255996457> \n Have this embed instead");
+        message.channel.send("You are missing the special role for this command! <a:ratejam:925478347255996457> \nHave this embed instead");
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#E76AA3')
         .setTitle("Arcade Tao")

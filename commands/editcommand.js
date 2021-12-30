@@ -7,6 +7,7 @@ module.exports = {
     permissions: [],
     description: "edit custom command",
     async execute(client, message, cmd, args, Discord){
+        
 
         var ID = message.author.id;
         let customCommand;
@@ -16,10 +17,12 @@ module.exports = {
         
 
         if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole)){
-            const name = args[0].toLowerCase();
+            
+            const name = args[0];
             const response = args.slice(1).join(" ");
             if (!name) return message.channel.send('Please specify a name for the Command');
             if (!response) return message.channel.send('Please specify a response for the Command');
+            name = name.toLowerCase();
 
             customCommand = await custom.findOne({ guildID: message.guild.id, commandName: name});
             if (!customCommand) return message.channel.send('This custom commands does not exist!');
