@@ -17,10 +17,17 @@ module.exports = {
 
         if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole)){
             
-            const name = args[0];
             
-            if (!name) return message.channel.send('Please specify a name');
-            name = name.toLowerCase();
+            try{
+                var name = args[0];
+            
+                if (!name) return message.channel.send('Please specify a name');
+                name = name.toLowerCase();
+    
+
+            } catch(err){
+                client.channels.cache.get("838666046327619604").send(codeBlock('js', err));
+            }
             
 
             customCommand = await custom.findOne({ guildID: message.guild.id, commandName: name});

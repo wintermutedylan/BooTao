@@ -1,7 +1,7 @@
 module.exports = {
     name: 'milim',
     aliases: [],
-    permissions: ["ADMINISTRATOR"],
+    permissions: [],
     description: "embeds",
     async execute(client, message,cmd,args,Discord){
         //var person = message.mentions.members.first();
@@ -13,7 +13,7 @@ module.exports = {
         
         
 
-        if (target.roles.cache.some(role => role.id === milimRole)){
+        //if (target.roles.cache.some(role => role.id === milimRole)){
         var milimArray = ["https://i.redd.it/s2754m4u81m51.jpg", 
         "https://cdn.discordapp.com/attachments/851937476049895454/925512775986450452/RDT_20211228_1717108429599099458490903.jpg",
         "https://cdn.discordapp.com/attachments/851937476049895454/925179307972784158/RDT_20211227_1912051092445932970943738.jpg",
@@ -45,12 +45,14 @@ module.exports = {
         "https://cdn.discordapp.com/attachments/851937476049895454/915794666752999464/RDT_20211127_2054558580073248815499802.jpg",
         "https://cdn.discordapp.com/attachments/851937476049895454/915794245351260170/RDT_20211201_2138471167351027840463337.jpg",
         "https://cdn.discordapp.com/attachments/851937476049895454/915667218816180224/RDT_20211201_131420634095728986822555.jpg",
-        "https://cdn.discordapp.com/attachments/850894221816758272/905803222843818024/RDT_20211104_0858156993332505543180057.jpg"
+        "https://cdn.discordapp.com/attachments/850894221816758272/905803222843818024/RDT_20211104_0858156993332505543180057.jpg",
+        "https://cdn.discordapp.com/attachments/851937476049895454/926491478677663814/RDT_20211231_0935086865249099632951709.jpg"
     ]
 
         var picture = milimArray[Math.floor(Math.random()*milimArray.length)];
         message.channel.send(picture);
-    } else {
+    //} else {
+        /*
         message.channel.send("You are missing the special role for this command! <a:ratejam:925478347255996457> \nHave this embed instead");
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#E76AA3')
@@ -71,7 +73,8 @@ module.exports = {
         
 
         message.channel.send({ embeds: [newEmbed] });
-    }
+        */
+    //}
 
         
         
