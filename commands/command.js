@@ -13,7 +13,7 @@ module.exports = {
         
         
 
-        //if (target.roles.cache.some(role => role.id === milimRole)){
+        if (target.roles.cache.some(role => role.id === milimRole)){
         var milimArray = ["https://i.redd.it/s2754m4u81m51.jpg", 
         "https://cdn.discordapp.com/attachments/851937476049895454/925512775986450452/RDT_20211228_1717108429599099458490903.jpg",
         "https://cdn.discordapp.com/attachments/851937476049895454/925179307972784158/RDT_20211227_1912051092445932970943738.jpg",
@@ -51,7 +51,8 @@ module.exports = {
 
         var picture = milimArray[Math.floor(Math.random()*milimArray.length)];
         message.channel.send(picture);
-    //} else {
+    } else {
+        message.reply("you can't run this command. <a:milimlaugh:928147732680548352>")
         /*
         message.channel.send("You are missing the special role for this command! <a:ratejam:925478347255996457> \nHave this embed instead");
         const newEmbed = new Discord.MessageEmbed()
@@ -74,7 +75,7 @@ module.exports = {
 
         message.channel.send({ embeds: [newEmbed] });
         */
-    //}
+    }
 
         
         
