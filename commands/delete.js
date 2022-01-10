@@ -31,8 +31,9 @@ module.exports = {
             
 
             customCommand = await custom.findOne({ guildID: message.guild.id, commandName: name});
-            const resp = customCommand.responseContent;
+            
             if (!customCommand) return message.channel.send('That custom command does not exist!');
+            const resp = customCommand.responseContent;
 
             await custom.findOneAndDelete({ guildID: message.guild.id, commandName: name});
 
