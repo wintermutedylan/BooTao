@@ -46,7 +46,20 @@ module.exports = {
         "https://cdn.discordapp.com/attachments/851937476049895454/915794245351260170/RDT_20211201_2138471167351027840463337.jpg",
         "https://cdn.discordapp.com/attachments/851937476049895454/915667218816180224/RDT_20211201_131420634095728986822555.jpg",
         "https://cdn.discordapp.com/attachments/850894221816758272/905803222843818024/RDT_20211104_0858156993332505543180057.jpg",
-        "https://cdn.discordapp.com/attachments/851937476049895454/926491478677663814/RDT_20211231_0935086865249099632951709.jpg"
+        "https://cdn.discordapp.com/attachments/851937476049895454/926491478677663814/RDT_20211231_0935086865249099632951709.jpg",
+        "https://media.discordapp.net/attachments/851937476049895454/930104707274395698/20220110_092303.jpg",
+        "https://media.discordapp.net/attachments/851937476049895454/929874497979441262/87698365_p0_master1200.png?width=643&height=909",
+        "https://media.discordapp.net/attachments/851937476049895454/929873676474679337/75923415_p0_master1200.png?width=598&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929871221359804446/91099858_p0_master1200.png",
+        "https://media.discordapp.net/attachments/851937476049895454/929152304811212870/89977752_p0_master1200.png?width=725&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929152018814210078/90821464_p0_master1200.png?width=644&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929151862442176613/90857414_p0_master1200.png?width=682&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929151445608042537/90775189_p0_master1200.png?width=643&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929151311067373618/91654131_p0_master1200.png",
+        "https://media.discordapp.net/attachments/851937476049895454/929149830629064755/93421242_p0_master1200.png?width=606&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929149773779435580/93656682_p0_master1200.png?width=647&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929152153350701066/90784458_p0_master1200.png?width=512&height=910",
+        "https://media.discordapp.net/attachments/851937476049895454/929821138077507614/20220109_143632.jpg"
     ]
 
         var picture = milimArray[Math.floor(Math.random()*milimArray.length)];
