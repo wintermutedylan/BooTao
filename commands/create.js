@@ -12,10 +12,10 @@ module.exports = {
         let customCommand;
         var target = message.guild.members.cache.get(ID);
         var modRole = "830700055539089456";
-        var staffRole = "915603340744871986";
+        var guideRole = "831221217364017202";
         
 
-        if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole)){
+        if (target.roles.cache.some(role => role.id === modRole || role.id === guideRole)){
             
             try{
                 var name = args[0];

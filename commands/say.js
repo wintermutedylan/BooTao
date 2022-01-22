@@ -8,8 +8,11 @@ module.exports = {
     permissions: [],
     description: "Create user profile",
     async execute(client, message, cmd, args, Discord){
+        var modRole = "830700055539089456";
+        var guideRole = "831221217364017202";
         var channel = args[0];
         var response = args.slice(1).join(" ");
+        if (target.roles.cache.some(role => role.id === modRole || role.id === guideRole)){
 
         if (channel.startsWith('<#') && channel.endsWith('>')) {
             channel = channel.slice(2, -1);
@@ -21,6 +24,11 @@ module.exports = {
             
             client.channels.cache.get("838666046327619604").send(codeBlock('js', err));
         }
+    } else {
+        message.channel.send("You don't have the required permissions to use this command");
+        
+
+    }
 
         
     }

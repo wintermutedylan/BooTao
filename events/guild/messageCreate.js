@@ -10,17 +10,23 @@ module.exports = async (Discord, client, message) => {
     const customCommand = await custom.findOne({ guildID: message.guild.id, commandName: cmd });
     if (customCommand) {
         let text = customCommand.responseContent;
-        const myArray = text.split(" ");
-        for (let i = 0; i < myArray.length; i++){
-            if (myArray[i] === "{mention}"){
-                var person = message.mentions.members.first();
-                if (!person) return message.channel.send("Please metion a user when using that command");
-                myArray[i] = person.displayName;
-            }
+        let newString = "";
+        
+        if (text.includes("{mention}")){
+            var person = message.mentions.members.first();
+            if (!person) return message.channel.send("Please mention a user when using that command");
+            newString = text.replace("{mention}", person.displayName);
         }
-        var results = myArray.join(" ");
+        // for (let i = 0; i < myArray.length; i++){
+        //     if (myArray[i] === "{mention}"){
+        //         var person = message.mentions.members.first();
+        //         if (!person) return message.channel.send("Please mention a user when using that command");
+        //         myArray[i] = person.displayName;
+        //     }
+        // }
+        
 
-        return message.channel.send(results);
+        return message.channel.send(newString);
     }
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
