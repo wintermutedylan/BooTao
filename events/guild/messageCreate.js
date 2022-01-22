@@ -10,7 +10,7 @@ module.exports = async (Discord, client, message) => {
     const customCommand = await custom.findOne({ guildID: message.guild.id, commandName: cmd });
     if (customCommand) {
         let text = customCommand.responseContent;
-        let newString = "";
+        let newString = text;
         
         if (text.includes("{mention}")){
             var person = message.mentions.members.first();
@@ -24,7 +24,7 @@ module.exports = async (Discord, client, message) => {
         //         myArray[i] = person.displayName;
         //     }
         // }
-        
+        //var results = myArray.join(" ");
 
         return message.channel.send(newString);
     }
