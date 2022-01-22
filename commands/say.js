@@ -10,8 +10,11 @@ module.exports = {
     async execute(client, message, cmd, args, Discord){
         var modRole = "830700055539089456";
         var guideRole = "831221217364017202";
+        var ID = message.author.id;
+        var target = message.guild.members.cache.get(ID);
         var channel = args[0];
         var response = args.slice(1).join(" ");
+        
         if (target.roles.cache.some(role => role.id === modRole || role.id === guideRole)){
 
         if (channel.startsWith('<#') && channel.endsWith('>')) {
