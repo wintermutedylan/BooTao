@@ -8,16 +8,17 @@ module.exports = {
     permissions: ["ADMINISTRATOR"],
     description: "Create user profile",
     async execute(client, message, cmd, args, Discord){
-        let emotestring = "";
+        
         let emoteArray = Array.from(message.guild.emojis.cache.values())
         
 
         for (let i = 0; i < emoteArray.length; i++){
-            emotestring =  emotestring + `<${emoteArray[i].name}:${emoteArray[i].id}>\n`
+            
+            message.channel.send(quote(`<${emoteArray[i].name}:${emoteArray[i].id}>`));
         }
         
 
-        message.channel.send(codeBlock(emotestring));
+        
         
     }
 }
