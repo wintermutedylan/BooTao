@@ -13,8 +13,12 @@ module.exports = {
         
 
         for (let i = 0; i < emoteArray.length; i++){
+            if (emoteArray[i].animated){
+                message.channel.send(codeBlock(`<a:${emoteArray[i].name}:${emoteArray[i].id}> Animated`));
+            } else {
+                message.channel.send(codeBlock(`<:${emoteArray[i].name}:${emoteArray[i].id}>`));
+            }
             
-            message.channel.send(quote(`<${emoteArray[i].name}:${emoteArray[i].id}>`));
         }
         
 
