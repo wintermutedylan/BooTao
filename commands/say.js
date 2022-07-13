@@ -38,7 +38,7 @@ module.exports = {
             }
         } catch(err){
             message.reply("There was an error using this command, make sure to mention a channel");
-            console.log(err);
+            //console.log(err);
             
             client.channels.cache.get("838666046327619604").send(codeBlock('js', err));
         }
