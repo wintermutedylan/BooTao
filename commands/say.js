@@ -27,7 +27,7 @@ module.exports = {
             channel = channel.slice(2, -1);
         }
         try {
-            if (hasAttachment && !response === ''){
+            if (hasAttachment && response){
                 client.channels.cache.get(channel).send({ content: response, files: [file]});
             } 
             else if(hasAttachment){
