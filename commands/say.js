@@ -23,10 +23,11 @@ module.exports = {
         
         if (target.roles.cache.some(role => role.id === modRole || role.id === guideRole)){
 
-        if (channel.startsWith('<#') && channel.endsWith('>')) {
-            channel = channel.slice(2, -1);
-        }
+        
         try {
+            if (channel.startsWith('<#') && channel.endsWith('>')) {
+                channel = channel.slice(2, -1);
+            }
             if (hasAttachment && response){
                 client.channels.cache.get(channel).send({ content: response, files: [file]});
             } 
