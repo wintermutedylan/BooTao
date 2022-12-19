@@ -10,6 +10,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord){
         var modRole = "830700055539089456";
         var guideRole = "831221217364017202";
+        var coffinTeamRole = "832034599970275349";
         var ID = message.author.id;
         var target = message.guild.members.cache.get(ID);
         var hasAttachment = false;
@@ -21,7 +22,7 @@ module.exports = {
         var response = args.slice(1).join(" ");
         
         
-        if (target.roles.cache.some(role => role.id === modRole || role.id === guideRole)){
+        if (target.roles.cache.some(role => role.id === modRole || role.id === guideRole || role.id === coffinTeamRole)){
 
         
         try {
