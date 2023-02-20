@@ -1,4 +1,4 @@
 module.exports = (Discord, client) =>{
     console.log('Boo Tao is online!')
-    client.user.setActivity("Christmas Music", {type: 'PLAYING'});
+    client.user.setActivity("Pranks", {type: 'PLAYING'});
 }
