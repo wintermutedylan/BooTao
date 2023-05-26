@@ -28,7 +28,14 @@ module.exports = {
         newString = newString.replace(/l|r/gi, "w");
         newString = front + " " + newString + " " + back;
 
-        message.channel.send({content: newString, allowed_mentions: false}).then((value) =>{
+        var messageObject = {
+            content: newString,
+            allowed_mentions: {
+                parse: []
+            }
+        }
+
+        message.channel.send(messageObject).then((value) =>{
             console.log(value);
         });
 
