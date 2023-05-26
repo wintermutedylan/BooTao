@@ -36,7 +36,7 @@ module.exports = {
         }
 
         message.channel.send(messageObject).then((value) =>{
-            console.log(value);
+            console.log(value.allowed_mentions);
         });
 
 
