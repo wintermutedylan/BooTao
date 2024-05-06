@@ -15,7 +15,7 @@ module.exports = {
         var staffRole = "915603340744871986";
        
         if (target.roles.cache.some(role => role.id === modRole || role.id === staffRole)){
-            if(args){
+            if(args.length != 0){
                 client.user.setActivity(args[0], {type: 'PLAYING'});
                 message.channel.send(`Status Updated`);
             }
