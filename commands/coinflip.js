@@ -9,7 +9,7 @@ module.exports = {
     async execute(client, message, cmd, args, Discord){
         
 
-        const result = Math.random() < 0.5 ? "Heads" : "Tails";
+        const result = Math.random() < 0.5 ? "Heads!" : "Tails!";
 
         message.channel.send(result);
 
